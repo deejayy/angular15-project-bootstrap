@@ -8,7 +8,7 @@ export interface StorageMockInterface {
 }
 
 export class StorageMock implements StorageMockInterface {
-  private storage: { [key: string]: any } = {};
+  private storage: Record<string, any> = {};
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   public setItem(key: string, value?: any) {
@@ -22,6 +22,7 @@ export class StorageMock implements StorageMockInterface {
   }
 
   public removeItem(key: string) {
+    // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
     delete this.storage[key];
   }
 
@@ -31,7 +32,7 @@ export class StorageMock implements StorageMockInterface {
 
   public key(index: number) {
     const keys = Object.keys(this.storage);
-    return keys[index] || null;
+    return keys[index] ?? null;
   }
 }
 
