@@ -12,7 +12,6 @@
     "noUncheckedIndexedAccess": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "importsNotUsedAsValues": "error",
     "checkJs": true,
     "skipLibCheck": true,
     "useDefineForClassFields": false,

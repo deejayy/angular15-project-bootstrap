@@ -22,6 +22,7 @@
       ],
       "plugins": ["eslint-plugin-no-null"],
       "rules": {
+        "import/no-extraneous-dependencies": ["off"],
         "@angular-eslint/component-class-suffix": ["error", { "suffixes": ["Component", "Modal", "Page"] }],
         "@angular-eslint/component-max-inline-declarations": "error",
         "@angular-eslint/contextual-decorator": "error",
