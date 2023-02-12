@@ -24,6 +24,7 @@
     "@auth0/angular-jwt": "^5.1.2",
     "@deejayy/api-caller": "^15",
     "@deejayy/reactive-config": "^15",
+    "@deejayy/runtime-localizer": "^15",
     "@ngrx/effects": "^15.2.1",
     "@ngrx/store": "^15.2.1",
     "@ngrx/store-devtools": "^15.2.1",

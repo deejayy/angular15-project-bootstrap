@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveConfigModule } from '@deejayy/reactive-config';
+import { RuntimeLocalizerModule } from '@deejayy/runtime-localizer';
 import { environment } from '@env/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
@@ -26,6 +27,16 @@ export class ConfigVars {
       logOnly: environment.production,
     }),
     ReactiveConfigModule.forRoot(ConfigVars, { configPath: environment.config }),
+    RuntimeLocalizerModule.forRoot([
+      {
+        lang: 'en-US',
+        path: '/assets/messages/messages.en-US.json',
+      },
+      {
+        lang: 'hu-HU',
+        path: '/assets/messages/messages.hu-HU.json',
+      },
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent],
