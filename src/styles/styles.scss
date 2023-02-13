@@ -1,3 +1,4 @@
+@use 'sass:map';
 @import 'app-theme';
 
 body div {
@@ -5,12 +6,12 @@ body div {
 }
 
 a {
-  color: map-get($foreground-light, 'base');
+  color: map.get($foreground-light, 'base');
 }
 
 @media (prefers-color-scheme: dark) {
   a {
-    color: map-get($foreground-dark, 'base');
+    color: map.get($foreground-dark, 'base');
   }
 }
 

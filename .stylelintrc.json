@@ -45,6 +45,7 @@
       }
     ],
     "function-url-quotes": "never",
+    "color-function-notation": "legacy",
     "font-family-name-quotes": "always-unless-keyword",
     "scss/at-mixin-argumentless-call-parentheses": "always",
     "value-keyword-case": null,
