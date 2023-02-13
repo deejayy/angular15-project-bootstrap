@@ -6,9 +6,21 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "npx jest",
+    "lint": "ng lint && npm run lint:styles",
+    "lint:styles": "stylelint --config=./.stylelintrc.json **/*.scss",
+    "lint-staged": "lint-staged -r",
+    "prepare": "git config core.hooksPath ./git-hooks || exit 0",
+    "precommit": "npm run lint-staged"
   },
   "private": true,
+  "lint-staged": {
+    "*.ts": [
+      "eslint",
+      "jest --findRelatedTests"
+    ],
+    "*.scss": "stylelint --config=./.stylelintrc.json"
+  },
   "dependencies": {
     "@angular/animations": "^15.1.0",
     "@angular/cdk": "^15.1.4",
@@ -29,6 +41,7 @@
     "@ngrx/store": "^15.2.1",
     "@ngrx/store-devtools": "^15.2.1",
     "immer": "^9.0.19",
+    "lint-staged": "^13.1.2",
     "modern-css-reset": "^1.4.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
