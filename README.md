@@ -141,7 +141,7 @@ SPAs often deal with API calls with JSON payloads back and forth. `@deejayy/api-
 
 You can choose from quick and dirty (fetch from a random API endpoint and deal with the reponse, no error handling, disposable result) to fully managed (api catalog, global error handling, central config, etc.).
 
-It support token based authentication, json communication, binary up/download.
+It supports token based authentication, json communication, binary up/download.
 
 Refer to [@deejayy/api-caller](https://www.npmjs.com/package/@deejayy/api-caller).
 
@@ -160,7 +160,9 @@ this.apiCallerService
 
 ## Reactive config
 
-Some application-specific settings needs to be bundled with the app together. The old way was to put these settings (e.g. api endpoint url, feature flags, etc) into the `environment.ts` file and import whenever required. Drawback is, the settings are compiled into the application bundle statically, "hardcoded". Reactive config aims to elevate the configuration handling to a new level: load the config when the application loads. It either can be a config.json in the assets folder or even an API endpoint somewhere on the internet: it will be loaded before the app starts.
+Some application-specific settings need to be bundled with the app together. The old way was to put these settings (e.g. api endpoint url, feature flags, etc) into the `environment.ts` file and import whenever required. Drawback is, the settings are compiled into the application bundle statically, "hardcoded".
+
+Reactive config aims to elevate the configuration handling to a new level: load the config when the application loads. It either can be a config.json in the assets folder or even an API endpoint somewhere on the internet: it will be loaded before the app starts.
 
 You can load, reload, get and set whatever properties you want to keep in the configuration.
 
