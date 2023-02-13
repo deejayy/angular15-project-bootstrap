@@ -22,7 +22,7 @@ export class ConfigVars {
     StoreModule.forRoot(),
     EffectsModule.forRoot(),
     StoreDevtoolsModule.instrument({
-      name: 'Angular 14 Bootstrap',
+      name: 'Angular 15 Bootstrap',
       maxAge: 200,
       logOnly: environment.production,
     }),

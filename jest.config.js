@@ -12,5 +12,7 @@ module.exports = {
   moduleDirectories: ["node_modules", "src"],
   moduleNameMapper: {
     "@env/(.*)": "<rootDir>/src/environments/$1",
+    "@shared/(.*)": "<rootDir>/src/app/shared/$1",
+    "@feature/(.*)": "<rootDir>/src/app/feature/$1",
   },
 };

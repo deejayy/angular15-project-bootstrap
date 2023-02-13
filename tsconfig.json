@@ -34,7 +34,9 @@
     "types": ["node", "jest"],
     "typeRoots": ["node_modules/@types"],
     "paths": {
-      "@env/*": ["src/environments/*"]
+      "@env/*": ["src/environments/*"],
+      "@shared/*": ["src/app/shared/*"],
+      "@feature/*": ["src/app/feature/*"]
     }
   },
   "angularCompilerOptions": {

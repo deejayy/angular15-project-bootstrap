@@ -17,7 +17,7 @@
   "lint-staged": {
     "*.ts": [
       "eslint",
-      "jest --findRelatedTests"
+      "jest --findRelatedTests --passWithNoTests"
     ],
     "*.scss": "stylelint --config=./.stylelintrc.json"
   },
