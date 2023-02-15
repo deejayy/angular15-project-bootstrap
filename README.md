@@ -86,7 +86,7 @@ This will scale the padding between 30px and 100px in a range from 320px to 1440
 ```scss
 .class {
   padding-top: smart-scale(30, 100);
-  padding-top: smart-scale(30, 100, 320px, 1440px);
+  padding-top: smart-scale(30, 100, 320, 1440);
 }
 ```
 
@@ -94,10 +94,10 @@ Combined together: above tablet size, it will be scaled between 50 and 100, belo
 
 ```scss
 .class {
-  padding-top: smart-scale(50, 100, map_get($breakpoints, tablet), 1440px);
+  padding-top: smart-scale(50, 100, map_get($breakpoints, tablet), 1440);
 
   @include mq(tablet) {
-    padding-top: smart-scale(30, 50, 320px, map_get($breakpoints, tablet));
+    padding-top: smart-scale(30, 50, 320, map_get($breakpoints, tablet));
   }
 }
 ```
