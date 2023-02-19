@@ -3,12 +3,14 @@
   To remove this page, simply delete /app/feature/demo folder completely and remove the DEMO_ROUTES reference from app-routing.module.ts.
 </p>
 
+<h1>State management</h1>
+
 <p>
   <button color="accent" mat-flat-button (click)="updateState()">Now</button>
   {{ date$ | async }}
 </p>
 
-<h1 class="smart-sized-title">Material components</h1>
+<h1>Material components</h1>
 
 <section>
   <div class="example-label">Basic</div>
@@ -136,3 +138,55 @@
     </div>
   </div>
 </section>
+
+<h1>api-caller</h1>
+
+<button color="primary" mat-flat-button (click)="fetchApi()">Fetch API</button>
+
+<table mat-table [dataSource]="data$">
+  <ng-container matColumnDef="id">
+    <th *matHeaderCellDef mat-header-cell>ID</th>
+    <td *matCellDef="let element" mat-cell>{{ element.id }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th *matHeaderCellDef mat-header-cell>Name</th>
+    <td *matCellDef="let element" mat-cell>{{ element.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="username">
+    <th *matHeaderCellDef mat-header-cell>Username</th>
+    <td *matCellDef="let element" mat-cell>{{ element.username }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th *matHeaderCellDef mat-header-cell>E-mail</th>
+    <td *matCellDef="let element" mat-cell>{{ element.email }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="address">
+    <th *matHeaderCellDef mat-header-cell>Address</th>
+    <td *matCellDef="let element" mat-cell>{{ element.address.city }}, {{ element.address.street }}</td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="phone">
+    <th *matHeaderCellDef mat-header-cell>Phone</th>
+    <td *matCellDef="let element" mat-cell>{{ element.phone }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="website">
+    <th *matHeaderCellDef mat-header-cell>Website</th>
+    <td *matCellDef="let element" mat-cell>{{ element.website }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="company">
+    <th *matHeaderCellDef mat-header-cell>Company</th>
+    <td *matCellDef="let element" mat-cell>{{ element.company.name }}</td>
+  </ng-container>
+
+  <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>
+  <tr *matRowDef="let row; columns: displayedColumns" mat-row></tr>
+</table>
+
+<h1 class="smart-sized-title">smart-scale and mq test</h1>
