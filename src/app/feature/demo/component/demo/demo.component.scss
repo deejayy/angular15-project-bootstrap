@@ -40,3 +40,18 @@ section {
   justify-content: center;
   width: 120px;
 }
+
+.tabs {
+  margin: 20px;
+  height: calc(100% - 100px);
+
+  .tab-content {
+    padding: 20px 0;
+  }
+
+  ::ng-deep {
+    .mat-mdc-tab-body-wrapper {
+      height: 100%;
+    }
+  }
+}

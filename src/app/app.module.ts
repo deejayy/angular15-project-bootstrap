@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveConfigModule } from '@deejayy/reactive-config';
 import { RuntimeLocalizerModule } from '@deejayy/runtime-localizer';
 import { environment } from '@env/environment';
@@ -19,7 +19,7 @@ export class ConfigVars {
   declarations: [AppComponent],
   imports: [
     AppRoutingModule,
-    BrowserModule,
+    BrowserAnimationsModule,
     FrameModule,
     StoreModule.forRoot(),
     EffectsModule.forRoot(),
