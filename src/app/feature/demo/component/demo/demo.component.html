@@ -1,9 +1,9 @@
 <mat-tab-group class="tabs" color="accent" mat-align-tabs="start" mat-stretch-tabs="false">
-  <mat-tab label="Introduction">
+  <mat-tab label="Introduction" i18n-label="@@demo/demo/introduction">
     <div class="tab-content">
-      <p>This is the demo page for the Angular Bootstrap application.</p>
-      <p>In the tabs, you can check how the embedded features are working. Check the code for reference implementation.</p>
-      <p>
+      <p i18n="@@demo/demo/intro-line-1">This is the demo page for the Angular Bootstrap application.</p>
+      <p i18n="@@demo/demo/intro-line-2">In the tabs, you can check how the embedded features are working. Check the code for reference implementation.</p>
+      <p i18n="@@demo/demo/intro-line-3">
         To remove this page, simply delete /app/feature/demo folder completely and remove the DEMO_ROUTES reference from
         app-routing.module.ts.
       </p>
@@ -147,7 +147,7 @@
       </section>
     </div>
   </mat-tab>
-  <mat-tab label="Api caller">
+  <mat-tab label="Api caller & reactive config">
     <div class="tab-content">
       <button color="primary" mat-flat-button (click)="fetchApi()">Fetch API</button>
 
@@ -200,6 +200,17 @@
   <mat-tab label="Mixins">
     <div class="tab-content">
       <h1 class="smart-sized-title">smart-scale and mq test</h1>
+      <p>(resize the window to see how these work)</p>
+    </div>
+  </mat-tab>
+  <mat-tab label="Runtime localizer">
+    <div class="tab-content">
+      <button color="primary" mat-flat-button (click)="switchLang('hu-HU')">Switch to Hungarian (hu-HU)</button>
+      <button mat-flat-button (click)="switchLang('en-US')">Switch to English (en-US)</button>
+      <p i18n="@@deliberately-missing-token">
+        This is a deliberately missing languge token, check dev console to observe what you can expect when a token is missing (e.g. typo, forget, etc).
+      </p>
+      <p>{{ codeLangToken }}</p>
     </div>
   </mat-tab>
 </mat-tab-group>

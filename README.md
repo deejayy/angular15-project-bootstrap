@@ -104,7 +104,9 @@ Combined together: above tablet size, it will be scaled between 50 and 100, belo
 
 ## State management
 
-Preinstalled and setup state management packages with dev tools. Immer is also installed for simplify state management with deeper objects.
+Preinstalled and setup state management packages with dev tools. `immer` is also installed for simplify state management with deeper objects.
+
+Additional `produceOn` helper added in `@shared` folder to be able to build reducers with `immer`.
 
 ## Build configuration in angular.json
 
@@ -176,7 +178,6 @@ Works with templates and TS code as well.
 
 See [@deejayy/runtime-localizer](https://www.npmjs.com/package/@deejayy/runtime-localizer) for details.
 
-# TBD
+# Demo page
 
-- demo page
-- produce-on
+Clone this repo & ng serve: there is a demo page with all the preset features.

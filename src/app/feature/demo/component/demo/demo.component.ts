@@ -1,7 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ApiCallerService } from '@deejayy/api-caller';
+import { ReactiveConfigService } from '@deejayy/reactive-config';
+import { RuntimeLocalizerService } from '@deejayy/runtime-localizer';
 import { DemoFacade } from '@feature/demo/store/demo.facade';
 import { Observable, of } from 'rxjs';
+import { ConfigVars } from 'src/app/app.module';
 
 interface DataModel {
   id: number;
@@ -40,12 +43,21 @@ export class DemoComponent {
 
   public data$: Observable<DataModel[]> = of([]);
 
+  public codeLangToken: string = $localize`:@@demo/demo/code-lang-token:This token is coming from code`;
+
   private simpleCallItem = {
     api: 'https://jsonplaceholder.typicode.com/',
     path: 'users#1',
   };
 
-  constructor(private demoFacade: DemoFacade, private apiCallerService: ApiCallerService) {
+  constructor(
+    private demoFacade: DemoFacade,
+    private apiCallerService: ApiCallerService,
+    private config: ReactiveConfigService<ConfigVars>,
+    private localizer: RuntimeLocalizerService,
+  ) {
+    this.simpleCallItem.api = this.config.get('apiUrl');
+
     this.data$ = this.apiCallerService.createApiResults<DataModel[]>(this.simpleCallItem).data$;
   }
 
@@ -55,5 +67,9 @@ export class DemoComponent {
 
   public fetchApi() {
     this.apiCallerService.callApi<DataModel[]>(this.simpleCallItem);
+  }
+
+  public switchLang(language: string) {
+    this.localizer.saveLocale(language, true);
   }
 }
