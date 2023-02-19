@@ -8,8 +8,7 @@ export const demoFeature = createFeature({
   reducer: createReducer(
     demoInitialState,
     produceOn(DemoActions.setDate, (state, action) => {
-      console.warn({ state, action });
-      return undefined;
+      state.date = action.payload;
     }),
   ),
 });

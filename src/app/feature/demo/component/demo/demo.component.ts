@@ -12,4 +12,8 @@ export class DemoComponent {
   public date$: Observable<Date> = this.demoFacade.date$;
 
   constructor(private demoFacade: DemoFacade) {}
+
+  public updateState() {
+    this.demoFacade.setDate(new Date());
+  }
 }

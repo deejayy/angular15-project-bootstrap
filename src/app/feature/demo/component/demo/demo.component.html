@@ -3,7 +3,10 @@
   To remove this page, simply delete /app/feature/demo folder completely and remove the DEMO_ROUTES reference from app-routing.module.ts.
 </p>
 
-{{ date$ | async }}
+<p>
+  <button color="accent" mat-flat-button (click)="updateState()">Now</button>
+  {{ date$ | async }}
+</p>
 
 <h1 class="smart-sized-title">Material components</h1>
 
